@@ -17,6 +17,23 @@ body {
   background-color: $color-primary;
   font-family: 'Museo Sans Cyrl', sans-serif;
   overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.508);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background:  $color-orange;
+
+    &:hover {
+      background: $color-yellow;
+    }
+  }
 }
 
 h1, h2, h3, h4, h5, h6, p {

@@ -4,11 +4,11 @@
   position: relative;
   display: grid;
   place-content: center;
-  
   padding: 10px 20px;
   background-color: #16151d;
-  @include font(1.4rem, 1.4rem, $weight: 100);
   cursor: pointer;
+
+  @include font(1.4rem, 1.4rem, $weight: 100);
 
   span {
     display: inline-block;
