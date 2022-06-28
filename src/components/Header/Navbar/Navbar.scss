@@ -1,0 +1,102 @@
+@import '../../../styles/mixins';
+
+.nav {
+  margin-right: 60px;
+
+  .nav__burger {
+    display: none;
+  }
+
+  @media (max-width: 1080px) {
+    margin-right: 20px;
+
+    .nav__burger {
+      display: flex;
+    }
+    
+    .nav__list {
+      position: fixed;
+      z-index: 10;
+      right: -220px;
+      top: 100px;
+      padding: 40px;
+      flex-direction: column;
+      background-color: $color-primary;
+      transition: transform .3s ease-in-out;
+
+      &--open {
+        transform: translateX(-220px);
+      }
+    }
+
+  }
+}
+
+.nav__burger {
+  position: relative;
+  width: 25px;
+  height: 21px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+
+  span {
+    display: block;
+    background-color: $color-orange;
+    width: 100%;
+    height: 3px;
+  }
+
+  &::before, &::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: $color-orange;
+  }
+
+  &--open {
+    transform: rotate(90deg);
+  }
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  @include font(1.6rem, 2.2rem);
+}
+
+.nav__link {
+  position: relative;
+  text-decoration: none;
+  
+  &::after {
+    transition: all .3s ease-in-out;
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: $color-hover;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  
+  &:visited {
+    color: inherit;
+  }
+
+  &:hover {
+    color: $color-hover;
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}

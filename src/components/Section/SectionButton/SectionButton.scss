@@ -1,0 +1,63 @@
+@import '../../../styles/mixins';
+
+.section__button {
+  position: relative;
+  display: grid;
+  place-content: center;
+  
+  padding: 10px 20px;
+  background-color: #16151d;
+  @include font(1.4rem, 1.4rem, $weight: 100);
+  cursor: pointer;
+
+  span {
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    z-index: 2;
+    transition: all .4s ease-in-out;
+  }
+
+  .bottom {
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(270deg, black 0%, $color-blue-dark 1%, $color-blue-dark 50%, $color-blue 90%, $color-blue 97%, rgba(250,250,250,1) 98%, rgba(250,250,250,1) 100%);
+  }
+
+  .top {
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, black 0%, $color-blue-dark 1%, $color-blue-dark 50%, $color-blue 90%, $color-blue 97%, rgba(250,250,250,1) 98%, rgba(250,250,250,1) 100%);
+  }
+
+  .left {
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, black 0%, $color-blue-dark 5%, $color-blue-dark 50%, $color-blue 89%, rgba(250,250,250,1) 90%, rgba(250,250,250,1) 100%);
+  }
+
+  .right {
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(0deg, black 0%, $color-blue-dark 5%, $color-blue-dark 50%, $color-blue 89%, rgba(250,250,250,1) 90%, rgba(250,250,250,1) 100%);
+  }
+
+  &:hover {
+    .left, .right {
+      transform:rotateX(180deg);
+    }
+
+    .bottom, .top {
+      transform:rotateY(180deg);
+    }
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
+}

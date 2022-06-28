@@ -1,0 +1,17 @@
+@import '../../../styles/variables';
+
+.section__stats {
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+
+  @media (max-width: $brake-point-1) {
+    align-self: flex-end;
+    max-width: 100%;
+    padding-top: 220px;
+    justify-content: space-evenly;
+  }
+}

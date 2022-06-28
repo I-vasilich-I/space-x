@@ -1,10 +1,13 @@
+import SectionButton from './SectionButton/SectionButton';
+import SectionStats from './SectionStats/SectionStats';
 import mars from '../../assets/images/mars.png';
+import { STATS } from '../../constants';
 import './Section.scss';
 
 
 function Section() {
   return (
-    <div className="section">
+    <section className="section">
       <img src={mars} alt="mars" className="mars" />
       <div className="wrapper wrapper__section">
         <div className="section__slogan">
@@ -12,17 +15,11 @@ function Section() {
             <h2>путешествие</h2>
             <h3>на красную планету</h3>
           </div>
-          <button type='button' className="section__button">
-            Начать путешествие
-            <span className="bottom"></span>
-            <span className="top"></span>
-            <span className="left"></span>
-            <span className="right"></span>
-          </button>
+          <SectionButton name="Начать путешествие" />
         </div>
-        <div className="section__stats"></div>
+        <SectionStats stats={STATS} />
       </div>
-    </div>
+    </section>
   );
 }
 
