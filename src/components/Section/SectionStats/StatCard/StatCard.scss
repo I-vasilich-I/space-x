@@ -1,0 +1,69 @@
+@import '../../../../styles/mixins';
+@import '../../../../styles/variables';
+
+.stat__card {
+  position: relative;
+  padding: 30px 0;
+  width: 185px;
+  height: 185px;
+  color: $color-white;
+  --gradient-deg: 135deg;
+  --gradient-color: rgba(250,250,250, .03);
+  --gradient-percent: 50%;
+
+  @media (max-width: 1140px) {
+    --gradient-color: rgba(0, 0, 0, 0.5);
+    --gradient-percent: 30%;
+  }
+
+  background:  linear-gradient(var(--gradient-deg), transparent 0%, transparent var(--gradient-percent), var(--gradient-color) 100%);
+
+  &:nth-child(2) {
+    --gradient-deg: -135deg;
+  }
+
+  &:nth-child(3) {
+    --gradient-deg: 45deg;
+  }
+
+  &:nth-child(4) {
+    --gradient-deg: -45deg;
+  }
+
+  &:hover {
+    cursor: pointer;
+    --gradient-color: rgba(250,250,250, .1);
+
+    @media (max-width: 1140px) {
+      --gradient-color: rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  p {
+    opacity: .8;
+  }
+
+  @media (max-width: $brake-point-1) {
+    background: rgba(250,250,250, .05);
+
+    &:hover {
+      background: rgba(250,250,250, .08);
+    }
+  }
+
+}
+
+.card__top, .card__bottom {
+  @include font(1.6rem, 1.6rem, $weight: 100);
+}
+
+.card__middle {
+  @include font(6rem, 6rem, $weight: 700);
+  span {
+    @include font(2rem, 2rem, $weight: 700);
+  }
+}
+
+.card__top {
+  margin-bottom: 20px;
+}

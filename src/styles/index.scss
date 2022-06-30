@@ -1,0 +1,66 @@
+@import "normalize.css";
+@import './fontface';
+@import './mixins';
+@import './variables';
+
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background-color: $color-primary;
+  font-family: 'Museo Sans Cyrl', sans-serif;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.508);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background:  $color-orange;
+
+    &:hover {
+      background: $color-yellow;
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: $max-content-width;
+  width: 100%;
+}
+
+.hidden {
+  position: fixed;
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
